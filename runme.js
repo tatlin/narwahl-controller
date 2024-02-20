@@ -1177,8 +1177,8 @@ var pushToGithubSync = function() {
   var stdout = "";
   stdout += "> git add *\n";
   stdout += '> git commit -m "Made some changes to ChiliPeppr myWorkspace using Cloud9"\n';
-  stdout += "> git push\n";
-  stdout += proc.execSync('git add *; git commit -m "Made some changes to ChiliPeppr myWorkspace using Cloud9"; git push;', { encoding: 'utf8' });
+  //stdout += "> git push\n";
+  stdout += proc.execSync('git add *; git commit -m "Made some changes to ChiliPeppr myWorkspace using Cloud9";', { encoding: 'utf8' });
   console.log("Pushed to github sync. Stdout:", stdout);
   
   return stdout;
@@ -1193,10 +1193,10 @@ var pushToGithubAsync = function() {
     exec('bash -c "git commit -m \\"Made some changes to ChiliPeppr myWorkspace using Cloud9\\""', function(error2, stdout2, stderr2) {
       // command output is in stdout
       console.log("stdout:", stdout2, "stderr:", stderr2);
-      exec('git push', function(error3, stdout3, stderr3) {
+      //exec('git push', function(error3, stdout3, stderr3) {
         // command output is in stdout
-        console.log("stdout:", stdout3, "stderr:", stderr3);
-      });
+      //  console.log("stdout:", stdout3, "stderr:", stderr3);
+      //});
     });
   });
   console.log("Pushed to github");
